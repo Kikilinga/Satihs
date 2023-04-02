@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b77bjhd5gpfj0"
-path="res://.godot/imported/Basic Plants.png-3a51ac930872a119228d0c6ef9491e17.ctex"
+uid="uid://boym8kg6cndhl"
+path="res://.godot/imported/Water.png-b6cd97be58500932e2915e8a9cc9ac0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Plants.png"
-dest_files=["res://.godot/imported/Basic Plants.png-3a51ac930872a119228d0c6ef9491e17.ctex"]
+source_file="res://AssetPack/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png"
+dest_files=["res://.godot/imported/Water.png-b6cd97be58500932e2915e8a9cc9ac0b.ctex"]
 
 [params]
 

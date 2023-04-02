@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://pkhuy0me8rx3"]
+
+[ext_resource type="PackedScene" uid="uid://bul0fys670v7u" path="res://Characters/default_player_cat.tscn" id="1_6dg2w"]
+
+[node name="GenericCameraFollowLevel" type="Node2D"]
+
+[node name="DefaultPlayerCat" parent="." instance=ExtResource("1_6dg2w")]
+position = Vector2(961, 540)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="DefaultPlayerCat"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(961, 540)

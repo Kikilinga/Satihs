@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwl13wk20m1j2"
-path="res://.godot/imported/Basic tools and meterials.png-c6a519ab5262433b5d1e74cbfc2cfb07.ctex"
+uid="uid://ce7ajttulv53n"
+path="res://.godot/imported/Tilled Dirt.png-98ed20da890e6f30ee3598395a722ab7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Objects/Basic tools and meterials.png"
-dest_files=["res://.godot/imported/Basic tools and meterials.png-c6a519ab5262433b5d1e74cbfc2cfb07.ctex"]
+source_file="res://AssetPack/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Tilled Dirt.png"
+dest_files=["res://.godot/imported/Tilled Dirt.png-98ed20da890e6f30ee3598395a722ab7.ctex"]
 
 [params]
 

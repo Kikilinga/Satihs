@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bemw7ihqrilc6"
-path="res://.godot/imported/Tall Grass hill tiles v.2.png-34b8e6c913c40fee871c6c234d56a6ea.ctex"
+uid="uid://bcsfdimdrtbal"
+path="res://.godot/imported/Basic Furniture.png-ffb5d52d5ea232f9ba6e9e1910b35c16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Tall Grass hill tiles v.2.png"
-dest_files=["res://.godot/imported/Tall Grass hill tiles v.2.png-34b8e6c913c40fee871c6c234d56a6ea.ctex"]
+source_file="res://AssetPack/Sprout Lands - Sprites - Basic pack/Objects/Basic Furniture.png"
+dest_files=["res://.godot/imported/Basic Furniture.png-ffb5d52d5ea232f9ba6e9e1910b35c16.ctex"]
 
 [params]
 

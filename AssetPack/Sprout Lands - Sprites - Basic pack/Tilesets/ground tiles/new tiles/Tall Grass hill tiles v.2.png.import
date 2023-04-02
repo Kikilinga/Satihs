@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs8l0fgndyetd"
-path="res://.godot/imported/Basic Grass Biom things 1.png-8814472e7ce84ee8299ea425ba2e5cd7.ctex"
+uid="uid://bemw7ihqrilc6"
+path="res://.godot/imported/Tall Grass hill tiles v.2.png-ba45b4e102ffe03690e088d021317bfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Grass Biom things 1.png"
-dest_files=["res://.godot/imported/Basic Grass Biom things 1.png-8814472e7ce84ee8299ea425ba2e5cd7.ctex"]
+source_file="res://AssetPack/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Tall Grass hill tiles v.2.png"
+dest_files=["res://.godot/imported/Tall Grass hill tiles v.2.png-ba45b4e102ffe03690e088d021317bfd.ctex"]
 
 [params]
 

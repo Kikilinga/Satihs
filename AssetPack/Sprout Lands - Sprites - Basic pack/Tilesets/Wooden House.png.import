@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1k14rme7ur7y"
-path="res://.godot/imported/Wood Bridge.png-47127563427b88151ccd90b1f78bf804.ctex"
+uid="uid://bii3bv434alkq"
+path="res://.godot/imported/Wooden House.png-d04887d099fe93a8f7759cf9d09ed9c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Objects/Wood Bridge.png"
-dest_files=["res://.godot/imported/Wood Bridge.png-47127563427b88151ccd90b1f78bf804.ctex"]
+source_file="res://AssetPack/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png"
+dest_files=["res://.godot/imported/Wooden House.png-d04887d099fe93a8f7759cf9d09ed9c4.ctex"]
 
 [params]
 

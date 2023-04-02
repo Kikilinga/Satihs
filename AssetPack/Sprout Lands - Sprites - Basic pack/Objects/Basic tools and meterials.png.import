@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://158g1tb2pa6o"
-path="res://.godot/imported/Chest.png-c1290195d8bf0e27f7572d3dc1762606.ctex"
+uid="uid://dwl13wk20m1j2"
+path="res://.godot/imported/Basic tools and meterials.png-731a18174eb1e3c14aa2c60a63b4fc2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Objects/Chest.png"
-dest_files=["res://.godot/imported/Chest.png-c1290195d8bf0e27f7572d3dc1762606.ctex"]
+source_file="res://AssetPack/Sprout Lands - Sprites - Basic pack/Objects/Basic tools and meterials.png"
+dest_files=["res://.godot/imported/Basic tools and meterials.png-731a18174eb1e3c14aa2c60a63b4fc2b.ctex"]
 
 [params]
 

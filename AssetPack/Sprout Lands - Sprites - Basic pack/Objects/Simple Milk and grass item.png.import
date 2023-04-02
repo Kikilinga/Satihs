@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcsfdimdrtbal"
-path="res://.godot/imported/Basic Furniture.png-9287f31470a1cb259edd4b33d3d8129e.ctex"
+uid="uid://cq05rxjo6sfel"
+path="res://.godot/imported/Simple Milk and grass item.png-3ad4ca07f3fdd77fa87d9c13b1f2a493.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Furniture.png"
-dest_files=["res://.godot/imported/Basic Furniture.png-9287f31470a1cb259edd4b33d3d8129e.ctex"]
+source_file="res://AssetPack/Sprout Lands - Sprites - Basic pack/Objects/Simple Milk and grass item.png"
+dest_files=["res://.godot/imported/Simple Milk and grass item.png-3ad4ca07f3fdd77fa87d9c13b1f2a493.ctex"]
 
 [params]
 

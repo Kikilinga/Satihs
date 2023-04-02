@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8vflj2fkeki1"
-path="res://.godot/imported/Basic Charakter Spritesheet.png-c2365985cd05995394fcb91c087bb9b6.ctex"
+uid="uid://b1k14rme7ur7y"
+path="res://.godot/imported/Wood Bridge.png-75d5994e4900f4dfad23e28656d1c4f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png"
-dest_files=["res://.godot/imported/Basic Charakter Spritesheet.png-c2365985cd05995394fcb91c087bb9b6.ctex"]
+source_file="res://AssetPack/Sprout Lands - Sprites - Basic pack/Objects/Wood Bridge.png"
+dest_files=["res://.godot/imported/Wood Bridge.png-75d5994e4900f4dfad23e28656d1c4f8.ctex"]
 
 [params]
 
