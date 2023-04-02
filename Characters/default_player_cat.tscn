@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsr2c33rdg1xk"]
+
+[ext_resource type="Texture2D" uid="uid://8vflj2fkeki1" path="res://Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_b5bgt"]
+
+[sub_resource type="GDScript" id="GDScript_po5hr"]
+script/source = "extends CharacterBody2D
+
+const SPEED = 300.0
+
+func _physics_process(_delta):
+	velocity = Input.get_vector(\"ui_left\", \"ui_right\",\"ui_up\", \"ui_down\")*SPEED
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6inbh"]
+size = Vector2(14, 16)
+
+[node name="DefaultPlayerCat" type="CharacterBody2D"]
+script = SubResource("GDScript_po5hr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_6inbh")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_b5bgt")
+hframes = 4
+vframes = 4
