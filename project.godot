@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Satihs"
-run/main_scene="res://Characters/default_player_cat.tscn"
+run/main_scene="res://Levels/generic_camera_follow_level.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 

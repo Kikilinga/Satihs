@@ -1,0 +1,153 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3d4rgc10d43"]
+
+[ext_resource type="Texture2D" uid="uid://vkqpory3sj7g" path="res://AssetPack/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="1_oub1x"]
+
+[sub_resource type="GDScript" id="GDScript_en6j4"]
+script/source = "extends CharacterBody2D
+
+enum COW_STATE { IDLE, WALK }
+
+@export var move_speed : float = 30
+@export var idle_time : float = 5
+@export var walk_time : float = 5
+
+@onready var animation_tree= $AnimationTree
+@onready var state_machine = animation_tree.get(\"parameters/playback\")
+@onready var sprite = $Sprite2D
+@onready var timer = $Timer
+
+
+var move_direction: Vector2 = Vector2.ZERO
+var current_state: COW_STATE = COW_STATE.WALK
+
+func _ready():
+	pick_new_state()
+
+func _physics_process(_delta):
+	if (current_state == COW_STATE.WALK):
+		velocity = move_direction * move_speed
+		move_and_slide()
+
+#Randomly generated a move direction
+# can be either -1, 0, or 1 for x and y
+func select_new_direction():
+	move_direction = Vector2(
+		randi_range(-1,1),
+		randi_range(-1,1)
+	)
+	
+	#switch the direction they are facing
+	if (move_direction.x < 0):
+		sprite.flip_h = true
+	elif (move_direction.x > 0):
+		sprite.flip_h = false
+
+# Switch from walking to idling
+func pick_new_state():
+	if(current_state == COW_STATE.IDLE):
+		#Change to Walk State
+		state_machine.travel(\"walk\")
+		current_state = COW_STATE.WALK
+		select_new_direction()
+		timer.start(walk_time)
+	elif(current_state == COW_STATE.WALK):
+		#Change to Idle State
+		state_machine.travel(\"idle\")
+		current_state = COW_STATE.IDLE
+		timer.start(idle_time)
+
+
+func _on_timer_timeout():
+	pick_new_state()
+
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxrdk"]
+size = Vector2(55, 34)
+
+[sub_resource type="Animation" id="Animation_7b0ps"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_fyykk"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lh60j"]
+_data = {
+"idle": SubResource("Animation_7b0ps"),
+"walk": SubResource("Animation_fyykk")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o4308"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dt4wn"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sf18d"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_prxe3"]
+states/idle/node = SubResource("AnimationNodeAnimation_o4308")
+states/idle/position = Vector2(326, 74)
+states/walk/node = SubResource("AnimationNodeAnimation_dt4wn")
+states/walk/position = Vector2(326, 151)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sf18d")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_m4pr2"]
+
+[node name="CowCharacter" type="CharacterBody2D"]
+script = SubResource("GDScript_en6j4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(997, 462)
+scale = Vector2(2, 2)
+texture = ExtResource("1_oub1x")
+hframes = 3
+vframes = 2
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(997.5, 471)
+shape = SubResource("RectangleShape2D_lxrdk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lh60j")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_prxe3")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_m4pr2")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
