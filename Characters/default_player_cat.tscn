@@ -7,25 +7,25 @@ script/source = "extends CharacterBody2D
 
 const SPEED = 300.0
 
-@export var starting_direction: Vector2 = Vector2(0,1)
-# parameters/idle/blend_position
+@export var initial_direction = Vector2(0,1)
+
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get(\"parameters/playback\")
 
 func _ready():
-	update_animation_parameters(starting_direction)
+	update_animation_parameters(initial_direction)
 
 func _physics_process(_delta):
-	velocity = Input.get_vector(\"ui_left\", \"ui_right\",\"ui_up\", \"ui_down\")*SPEED
-	update_animation_parameters(velocity/300)
+	velocity = Input.get_vector(\"ui_left\", \"ui_right\",\"ui_up\", \"ui_down\").normalized()
+	update_animation_parameters(velocity)
 	change_animation_state()
+	velocity *= SPEED
 	move_and_slide()
-	
 
-func update_animation_parameters(player_move: Vector2):
-	if (player_move != Vector2.ZERO):
-		animation_tree.set(\"parameters/walk/blend_position\", player_move)		
-		animation_tree.set(\"parameters/idle/blend_position\", player_move)
+func update_animation_parameters(animation_direction: Vector2):
+	if (animation_direction != Vector2.ZERO):
+		animation_tree.set(\"parameters/walk/blend_position\", animation_direction)
+		animation_tree.set(\"parameters/idle/blend_position\", animation_direction)
 
 func change_animation_state():
 	if (velocity != Vector2.ZERO):
@@ -210,6 +210,7 @@ animation = &"idle_left"
 animation = &"idle_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_j271u"]
+auto_triangles = false
 blend_point_0/node = SubResource("AnimationNodeAnimation_wjtuo")
 blend_point_0/pos = Vector2(0, -1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_s6lit")
@@ -218,6 +219,10 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_1ox0j")
 blend_point_2/pos = Vector2(-1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_vobfn")
 blend_point_3/pos = Vector2(1, 0)
+triangles = PackedInt32Array(0, 2, 3, 1, 2, 3)
+min_space = Vector2(-1.5, -1.5)
+max_space = Vector2(1.5, 1.5)
+snap = Vector2(0.01, 0.01)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jswuf"]
@@ -233,14 +238,20 @@ animation = &"walk_left"
 animation = &"walk_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xusti"]
+auto_triangles = false
 blend_point_0/node = SubResource("AnimationNodeAnimation_jswuf")
-blend_point_0/pos = Vector2(0, 1)
+blend_point_0/pos = Vector2(0, 1.1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_2f4p3")
-blend_point_1/pos = Vector2(0, -1)
+blend_point_1/pos = Vector2(0, -1.1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_ik1v3")
 blend_point_2/pos = Vector2(-1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_0acsw")
 blend_point_3/pos = Vector2(1, 0)
+triangles = PackedInt32Array(1, 2, 3, 0, 2, 3)
+min_space = Vector2(-1.08, -1.5)
+max_space = Vector2(1.08, 1.5)
+blend_mode = 1
+sync = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ng80l"]
 advance_mode = 2
@@ -278,5 +289,5 @@ tree_root = SubResource("AnimationNodeStateMachine_poo82")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_65nkd")
-parameters/idle/blend_position = Vector2(0, -0.1)
-parameters/walk/blend_position = Vector2(0, 0)
+parameters/idle/blend_position = Vector2(0.00368905, 0.975983)
+parameters/walk/blend_position = Vector2(-0.217275, -0.0458515)

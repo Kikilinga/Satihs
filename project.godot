@@ -13,12 +13,17 @@ config_version=5
 config/name="Satihs"
 run/main_scene="res://Levels/generic_camera_follow_level.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -65,4 +70,5 @@ ui_page_down={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.643137, 0.760784, 0.388235, 1)
 textures/canvas_textures/default_texture_filter=0
