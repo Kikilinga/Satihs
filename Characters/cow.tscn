@@ -19,21 +19,21 @@ func _ready():
 	timer.start(idle_time)
 
 func _physics_process(delta):
-	move_and_collide(move_direction*move_speed*delta)
+	velocity = move_direction * move_speed
+	move_and_collide(velocity*delta)
 
-#Randomly generated a move direction
+#Randomly generates a move direction
 # can be either -1, 0, or 1 for x and y
 func select_new_direction():
 	move_direction = Vector2(
 		randi_range(-1,1),
 		randi_range(-1,1)
-	)
-	#switch the direction they are facing
-	
+	).normalized()
+
 func flip_sprite():
 	if (move_direction.x < 0):
 		sprite.flip_h = true
-	elif (move_direction.x > 0):
+	if (move_direction.x > 0):
 		sprite.flip_h = false
 
 # Switch from walking to idling
@@ -126,7 +126,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_oub1x")
 hframes = 3
 vframes = 2
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(997.5, 471)
