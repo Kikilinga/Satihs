@@ -8,7 +8,7 @@ script/source = "extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get(\"parameters/playback\")
 
-var top_speed = 100.0
+var top_speed = 200.0
 
 func _ready():
 	animation_tree.set(\"parameters/idle/blend_position\", Vector2(0,1))
@@ -33,7 +33,7 @@ func change_animation_state():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6inbh"]
-size = Vector2(9, 18)
+size = Vector2(8, 6.5)
 
 [sub_resource type="Animation" id="Animation_g6smw"]
 length = 0.001
@@ -252,7 +252,7 @@ position = Vector2(0, -32)
 script = SubResource("GDScript_po5hr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 14)
+position = Vector2(0, 25.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_6inbh")
 
