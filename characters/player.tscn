@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://cvm1oadyexew2"]
+[gd_scene load_steps=27 format=3 uid="uid://dirx4ky0n3exg"]
 
-[ext_resource type="Texture2D" uid="uid://bq8fef71udhjg" path="res://assets/player.png" id="1_251qb"]
+[ext_resource type="Texture2D" uid="uid://bq8fef71udhjg" path="res://assets/characters/player.png" id="1_251qb"]
+[ext_resource type="PackedScene" uid="uid://de7uu0rht811x" path="res://menu/in_game_menu.tscn" id="2_xdh0j"]
 
 [sub_resource type="GDScript" id="GDScript_po5hr"]
 script/source = "extends CharacterBody2D
@@ -248,7 +249,7 @@ states/walk/position = Vector2(317, 147)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_65nkd"]
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(0, -32)
+position = Vector2(512, 256)
 script = SubResource("GDScript_po5hr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -275,3 +276,5 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_65nkd")
 parameters/idle/blend_position = Vector2(1.3704, -1.73581)
 parameters/walk/blend_position = Vector2(0.0501119, -0.740175)
+
+[node name="in_game_menu" parent="." instance=ExtResource("2_xdh0j")]
