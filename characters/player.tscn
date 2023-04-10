@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3]
+[gd_scene load_steps=27 format=3 uid="uid://cgkahhv2ecxy2"]
 
 [ext_resource type="Texture2D" uid="uid://bq8fef71udhjg" path="res://assets/characters/player.png" id="1_251qb"]
 [ext_resource type="PackedScene" uid="uid://de7uu0rht811x" path="res://menu/in_game_menu.tscn" id="2_xdh0j"]
@@ -249,7 +249,7 @@ states/walk/position = Vector2(317, 147)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_65nkd"]
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(512, 256)
+position = Vector2(480, 270)
 script = SubResource("GDScript_po5hr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -278,3 +278,4 @@ parameters/idle/blend_position = Vector2(1.3704, -1.73581)
 parameters/walk/blend_position = Vector2(0.0501119, -0.740175)
 
 [node name="in_game_menu" parent="." instance=ExtResource("2_xdh0j")]
+position = Vector2(-480, -270)

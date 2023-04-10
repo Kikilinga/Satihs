@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://de7uu0rht811x"]
+[gd_scene load_steps=4 format=3 uid="uid://de7uu0rht811x"]
 
 [ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="1_j8n85"]
+[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="2_i4s77"]
 
 [sub_resource type="GDScript" id="GDScript_fvtdn"]
-script/source = "extends CanvasLayer
+script/source = "extends Node2D
 
 @onready var select_arrow = $Control/NinePatchRect/RichTextLabel
 @onready var menu_options = $Control/NinePatchRect/VBoxContainer
@@ -46,7 +47,8 @@ func menu_select_handler():
 		selected = 0
 "
 
-[node name="in_game_menu" type="CanvasLayer"]
+[node name="in_game_menu" type="Node2D"]
+y_sort_enabled = true
 script = SubResource("GDScript_fvtdn")
 
 [node name="Control" type="Control" parent="."]
@@ -56,6 +58,10 @@ offset_left = 851.0
 offset_top = 3.0
 offset_right = 891.0
 offset_bottom = 3.0
+
+[node name="BackgroundLighten" type="Sprite2D" parent="Control"]
+position = Vector2(-371, 267)
+texture = ExtResource("2_i4s77")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 layout_mode = 1
