@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://de7uu0rht811x"]
 
-[ext_resource type="Texture2D" uid="uid://dg721ctgucx45" path="res://assets/menu/in-game_menu.png" id="1_j8n85"]
+[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="1_j8n85"]
 
 [sub_resource type="GDScript" id="GDScript_fvtdn"]
 script/source = "extends CanvasLayer
@@ -52,17 +52,19 @@ script = SubResource("GDScript_fvtdn")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 851.0
+offset_top = 3.0
+offset_right = 891.0
+offset_bottom = 3.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 21.125
+anchor_left = 21.275
 anchor_right = 23.775
-offset_left = 6.00006
-offset_top = 3.0
-offset_right = 6.00006
-offset_bottom = 179.0
+offset_left = -851.0
+offset_right = -845.0
+offset_bottom = 176.0
 texture = ExtResource("1_j8n85")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 8
