@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bh06j7aegi3g1"]
 
-[ext_resource type="PackedScene" uid="uid://cvm1oadyexew2" path="res://characters/player.tscn" id="1_mmcpw"]
+[ext_resource type="PackedScene" uid="uid://dirx4ky0n3exg" path="res://characters/player.tscn" id="1_mmcpw"]
 
 [node name="GenericCameraFollowLevel" type="Node2D"]
 

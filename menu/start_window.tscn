@@ -18,54 +18,59 @@ func _process(delta):
 	pass
 
 func _on_settings_button_pressed():
-	$settings_menu.visible = true
 	$main_menu.visible = false
-	
+	$settings_menu.visible = true
+
+func _on_return_pressed():
+	$main_menu.visible = true
+	$settings_menu.visible = false
+
 func _on_timer_timeout():
 	if icon.flip_h:
 		icon.flip_h = false
 	else: 
 		icon.flip_h = true
 	timer.start(flip_time)
-
-
-func _on_quit_button_pressed():
-	get_tree().quit()
 "
 
 [node name="start_window" type="Node2D"]
 script = SubResource("GDScript_xbcn5")
 
-[node name="main_menu" parent="." instance=ExtResource("1_f0mnv")]
-offset_top = 520.0
-offset_bottom = 520.0
-
-[node name="settings_menu" parent="." instance=ExtResource("2_ipd4p")]
-visible = false
-
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(488, 248)
+position = Vector2(448, 256)
+scale = Vector2(1.661, 2)
 texture = ExtResource("3_tbtep")
 
 [node name="Timer" type="Timer" parent="Icon"]
 
-[node name="quit_button" type="Button" parent="."]
+[node name="main_menu" parent="." instance=ExtResource("1_f0mnv")]
 offset_left = 16.0
-offset_top = 470.0
-offset_right = 125.0
-offset_bottom = 501.0
-text = "Quit                "
-alignment = 0
+offset_top = 448.0
+offset_right = 16.0
+offset_bottom = 448.0
+
+[node name="main_menu_container" parent="main_menu" index="0"]
+offset_top = -24.0
+offset_bottom = 77.0
+
+[node name="settings_menu" parent="." instance=ExtResource("2_ipd4p")]
+visible = false
+position = Vector2(0, 26)
 
 [node name="return" type="Button" parent="."]
 visible = false
 offset_left = 16.0
-offset_top = 468.0
-offset_right = 174.0
-offset_bottom = 499.0
-text = "Back"
+offset_top = 488.0
+offset_right = 125.0
+offset_bottom = 519.0
+text = "Return
+"
 alignment = 0
 
 [connection signal="timeout" from="Icon/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="main_menu/main_menu_container/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="settings_menu/settings_container/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="return" to="." method="_on_quit_button_pressed"]
+
+[editable path="main_menu"]
+[editable path="settings_menu"]
