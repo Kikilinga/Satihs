@@ -1,53 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://de7uu0rht811x"]
+[gd_scene load_steps=5 format=3 uid="uid://b6hdgsxelye35"]
 
-[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="1_j8n85"]
-[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="2_i4s77"]
+[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="1_7d8co"]
+[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="2_j43j5"]
+[ext_resource type="PackedScene" uid="uid://2khuqht1pgko" path="res://menu/equip.tscn" id="3_0e70j"]
 
 [sub_resource type="GDScript" id="GDScript_fvtdn"]
 script/source = "extends Node2D
 
 @onready var select_arrow = $Control/NinePatchRect/RichTextLabel
+# we will make menu_options a variable for now, for more modularity.
+# for the final release we will make this a specific number for less memory utilization.
 @onready var menu_options = $Control/NinePatchRect/VBoxContainer
-@onready var menu= $Control
-@onready var player = get_parent()
+@onready var main_menu = self
+@onready var equip_menu = get_parent().get_node(\"equip\")
 
 var selected = 0
+
+# these variables can also be hard coded for less memory usage in the final.
 var option_margin = 27
 var top_margin = 8
 
-
 func _ready():
-	menu.visible = false
+	main_menu.visible = false
 
 func _unhandled_input(event):
-	if event.is_action_pressed(\"ui_menu\"):
-		menu_visibility_handler()
-
-	if menu.visible and event.is_action_pressed(\"ui_up\"):
+	if main_menu.visible and event.is_action_pressed(\"ui_up\"):
 		selected -= 1
-	if menu.visible and event.is_action_pressed(\"ui_down\"):
+	if main_menu.visible and event.is_action_pressed(\"ui_down\"):
 		selected += 1
-
-	menu_select_handler()
-
-	select_arrow.position.y = top_margin + (selected) * option_margin	
-
-func menu_visibility_handler():
-	if menu.visible:
-		menu.visible = false
-		player.set_physics_process(true)		
-	else:
-		menu.visible = true
-		player.set_physics_process(false)
+		
+	menu_select_handler();
 
 func menu_select_handler():
 	if selected < 0:
 		selected = menu_options.get_child_count()-1 
 	if selected > menu_options.get_child_count()-1:
 		selected = 0
+
+	select_arrow.position.y = top_margin + (selected) * option_margin
 "
 
-[node name="in_game_menu" type="Node2D"]
+[node name="main_menu" type="Node2D"]
 y_sort_enabled = true
 script = SubResource("GDScript_fvtdn")
 
@@ -61,7 +54,7 @@ offset_bottom = 3.0
 
 [node name="BackgroundLighten" type="Sprite2D" parent="Control"]
 position = Vector2(-371, 267)
-texture = ExtResource("2_i4s77")
+texture = ExtResource("1_7d8co")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 layout_mode = 1
@@ -71,7 +64,7 @@ anchor_right = 23.775
 offset_left = -851.0
 offset_right = -845.0
 offset_bottom = 176.0
-texture = ExtResource("1_j8n85")
+texture = ExtResource("2_j43j5")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 8
 patch_margin_top = 8
@@ -153,3 +146,5 @@ offset_right = 54.0
 offset_bottom = 48.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = ">"
+
+[node name="equip" parent="." instance=ExtResource("3_0e70j")]
