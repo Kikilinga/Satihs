@@ -46,10 +46,14 @@ func menu_select_handler():
 		3:
 			pass
 		4:
-			pass
+			SaveGame.new().write_savegame()
 		5:
 			get_tree().quit()
 	reset_menu()
+
+func reset_menu():
+	selected = 0
+	menu_arrow_handler()
 
 func menu_arrow_handler():
 	if selected < 0:
@@ -58,11 +62,6 @@ func menu_arrow_handler():
 		selected = 0
 
 	select_arrow.position.y = top_margin + (selected) * option_margin
-
-
-func reset_menu():
-	selected = 0
-	menu_arrow_handler()
 "
 
 [node name="main_menu" type="Node2D"]

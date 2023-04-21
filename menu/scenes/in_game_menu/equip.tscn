@@ -27,13 +27,17 @@ func _unhandled_input(event):
 			selected -= 1
 		if event.is_action_pressed(\"ui_menu\"):
 			reset_menu()
-			self.visible = false
 		menu_arrow_handler()
 
 # resets the menu to default.
 func reset_menu():
 	selected = 0
 	menu_arrow_handler()
+	self.visible = false
+
+# this function should make the items in the view change depending on which menu is selected.
+func update_window():
+	pass
 
 func menu_arrow_handler():
 	if selected < 0:
@@ -45,7 +49,6 @@ func menu_arrow_handler():
 "
 
 [node name="equip" type="Node2D"]
-visible = false
 y_sort_enabled = true
 script = SubResource("GDScript_fvtdn")
 
