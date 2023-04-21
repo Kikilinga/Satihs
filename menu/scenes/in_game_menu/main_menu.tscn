@@ -1,43 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6hdgsxelye35"]
+[gd_scene load_steps=5 format=3 uid="uid://cbt4yysj5b4e2"]
 
-[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="1_7d8co"]
-[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="2_j43j5"]
-[ext_resource type="PackedScene" uid="uid://2khuqht1pgko" path="res://menu/equip.tscn" id="3_0e70j"]
+[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="1_orhv1"]
+[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="2_rtf2n"]
+[ext_resource type="PackedScene" uid="uid://2khuqht1pgko" path="res://menu/scenes/in_game_menu/equip.tscn" id="3_xi122"]
 
 [sub_resource type="GDScript" id="GDScript_fvtdn"]
 script/source = "extends Node2D
 
-@onready var select_arrow = $Control/NinePatchRect/RichTextLabel
-# we will make menu_options a variable for now, for more modularity.
-# for the final release we will make this a specific number for less memory utilization.
-@onready var menu_options = $Control/NinePatchRect/VBoxContainer
-@onready var main_menu = self
-@onready var equip_menu = get_parent().get_node(\"equip\")
-
 var selected = 0
 
+@onready var equip_menu = get_parent().get_node(\"equip\")
+
+#this is used to change the arrow position, which can also be hard coded for final.
+@onready var select_arrow = $Control/NinePatchRect/select_arrow
+
+#this is used to grab the number of menu items, we can hard code this for release.
+@onready var menu_options = $Control/NinePatchRect/VBoxContainer
+ 
 # these variables can also be hard coded for less memory usage in the final.
 var option_margin = 27
 var top_margin = 8
 
 func _ready():
-	main_menu.visible = false
+	self.visible = false
 
 func _unhandled_input(event):
-	if main_menu.visible and event.is_action_pressed(\"ui_up\"):
-		selected -= 1
-	if main_menu.visible and event.is_action_pressed(\"ui_down\"):
-		selected += 1
-		
-	menu_select_handler();
+	if self.visible:
+		if event.is_action_pressed(\"ui_up\"):
+			selected -= 1
+		if event.is_action_pressed(\"ui_down\"):
+			selected += 1
+		if event.is_action_pressed(\"ui_accept\"):
+			menu_select_handler()
+		menu_arrow_handler();
 
 func menu_select_handler():
+	self.visible = false
+	match selected:
+		0:
+			equip_menu.visible = true
+		1:
+			equip_menu.visible = true
+		2:
+			pass
+		3:
+			pass
+		4:
+			pass
+		5:
+			get_tree().quit()
+	reset_menu()
+
+func menu_arrow_handler():
 	if selected < 0:
 		selected = menu_options.get_child_count()-1 
 	if selected > menu_options.get_child_count()-1:
 		selected = 0
 
 	select_arrow.position.y = top_margin + (selected) * option_margin
+
+
+func reset_menu():
+	selected = 0
+	menu_arrow_handler()
 "
 
 [node name="main_menu" type="Node2D"]
@@ -54,7 +79,7 @@ offset_bottom = 3.0
 
 [node name="BackgroundLighten" type="Sprite2D" parent="Control"]
 position = Vector2(-371, 267)
-texture = ExtResource("1_7d8co")
+texture = ExtResource("1_orhv1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 layout_mode = 1
@@ -64,7 +89,7 @@ anchor_right = 23.775
 offset_left = -851.0
 offset_right = -845.0
 offset_bottom = 176.0
-texture = ExtResource("2_j43j5")
+texture = ExtResource("2_rtf2n")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 8
 patch_margin_top = 8
@@ -138,7 +163,7 @@ text = "Quit"
 fit_content = true
 selection_enabled = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect"]
+[node name="select_arrow" type="RichTextLabel" parent="Control/NinePatchRect"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 8.0
@@ -147,4 +172,4 @@ offset_bottom = 48.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = ">"
 
-[node name="equip" parent="." instance=ExtResource("3_0e70j")]
+[node name="equip" parent="." instance=ExtResource("3_xi122")]
