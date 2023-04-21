@@ -6,16 +6,25 @@
 [sub_resource type="GDScript" id="GDScript_1mq6s"]
 script/source = "extends Node2D
 
+@onready var all_menus = [get_node(\"main_menu\"), get_node(\"equip\")]
 @onready var player = get_parent()
-@onready var main_menu = get_node(\"main_menu\")
 
 func _unhandled_input(event):
 	if event.is_action_pressed(\"ui_menu\"):
-		main_menu_visibility()
+		handle_menu()
+	if event.is_action_pressed(\"ui_accept\"):
+		release_player()
 
-func main_menu_visibility():
-	player.set_physics_process(main_menu.visible)
-	main_menu.visible = !main_menu.visible
+func handle_menu():
+	all_menus[0].visible = !all_menus[0].visible
+	release_player()
+
+func release_player():
+	player.set_physics_process(true)
+	for menu in all_menus:
+		if menu.visible:
+			player.set_physics_process(false)
+			break
 "
 
 [node name="all_player_menus" type="Node2D"]
@@ -24,4 +33,3 @@ script = SubResource("GDScript_1mq6s")
 [node name="main_menu" parent="." instance=ExtResource("1_jc4h6")]
 
 [node name="equip" parent="." instance=ExtResource("2_oxclf")]
-visible = true
