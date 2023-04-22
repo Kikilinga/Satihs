@@ -13,7 +13,7 @@ var selected = 0
 #these could be turned into hard coded numbers for the final version
 @onready var menu_options = $Control/NinePatchRect/VBoxContainer
 
-# these variables can also be hard coded for less memory usage in the final.
+#these could be turned into hard coded numbers for the final version
 var option_margin = 27
 var top_margin = 8
 

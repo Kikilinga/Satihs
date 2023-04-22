@@ -33,6 +33,10 @@ func menu_arrow_handler():
 		selected = 0
 
 	select_arrow.position.x = top_margin + (selected) * option_margin
+
+#this function should change the items displayed based on the filter selected.
+func menu_select_handler():
+	pass
 "
 
 [node name="equip" type="Node2D"]
