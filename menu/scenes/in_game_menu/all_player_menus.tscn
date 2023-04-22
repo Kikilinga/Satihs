@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6mt503q3wg01"]
+
+[ext_resource type="PackedScene" uid="uid://cbt4yysj5b4e2" path="res://menu/scenes/in_game_menu/main_menu.tscn" id="1_jc4h6"]
+[ext_resource type="PackedScene" uid="uid://2khuqht1pgko" path="res://menu/scenes/in_game_menu/equip.tscn" id="2_oxclf"]
+
+[sub_resource type="GDScript" id="GDScript_1mq6s"]
+script/source = "extends Node2D
+
+@onready var main_menu = get_node(\"main_menu\")
+@onready var equip_menu = get_node(\"equip\")
+@onready var player = get_parent()
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"ui_menu\"):
+		main_menu_visibility()
+		
+	if event.is_action_pressed(\"ui_accept\"):
+		menu_select_handler()
+
+func main_menu_visibility():
+	player.set_physics_process(main_menu.visible)
+	main_menu.visible = !main_menu.visible
+
+func menu_select_handler():
+	match main_menu.selected:
+		0:
+			equip_menu.visible = true
+			main_menu.visible = false
+		1:
+			equip_menu.visible = true
+			main_menu.visible = false
+		2:
+			pass
+		3:
+			pass
+		4:
+			SaveGame.new().write_savegame()
+		5:
+			get_tree().quit()
+"
+
+[node name="all_player_menus" type="Node2D"]
+script = SubResource("GDScript_1mq6s")
+
+[node name="main_menu" parent="." instance=ExtResource("1_jc4h6")]
+
+[node name="equip" parent="." instance=ExtResource("2_oxclf")]
+visible = true

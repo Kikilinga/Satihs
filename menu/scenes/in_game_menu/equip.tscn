@@ -6,22 +6,27 @@
 [sub_resource type="GDScript" id="GDScript_fvtdn"]
 script/source = "extends Node2D
 
-@onready var select_arrow = $Control/NinePatchRect/RichTextLabel
-@onready var menu_options = $Control/NinePatchRect/VBoxContainer
-@onready var menu= self
-
+@onready var select_arrow = $Control/NinePatchRect/select_arrow
 var selected = 0
+
+#these could be turned into hard coded numbers for the final version
+@onready var menu_options = $Control/NinePatchRect/VBoxContainer
+
+#these could be turned into hard coded numbers for the final version
 var option_margin = 225
 var top_margin = 8
 
 func _ready():
-	menu.visible = false
+	self.visible = false
 	
 func _unhandled_input(event):
-	if menu.visible and event.is_action_pressed(\"ui_right\"):
+	if self.visible and event.is_action_pressed(\"ui_right\"):
 		selected += 1
-	if menu.visible and event.is_action_pressed(\"ui_left\"):
+	if self.visible and event.is_action_pressed(\"ui_left\"):
 		selected -= 1
+		
+	if self.visible and event.is_action_pressed(\"ui_menu\"):
+		self.visible = false
 
 	menu_select_handler()
 
@@ -130,7 +135,7 @@ text = "Key"
 fit_content = true
 selection_enabled = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect"]
+[node name="select_arrow" type="RichTextLabel" parent="Control/NinePatchRect"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 8.0
