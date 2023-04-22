@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://batyqy5g2te2b"]
+[gd_scene load_steps=3 format=3 uid="uid://siwq8fsk3lil"]
 
 [ext_resource type="PackedScene" uid="uid://cgkahhv2ecxy2" path="res://characters/player.tscn" id="1_mmcpw"]
-[ext_resource type="PackedScene" uid="uid://c6mt503q3wg01" path="res://menu/scenes/in_game_menu/all_player_menus.tscn" id="2_bxbul"]
+[ext_resource type="PackedScene" uid="uid://c1k7dv7qdxyuq" path="res://menu/scenes/in_game_menu/all_player_menus_camera_follow.tscn" id="2_bxbul"]
 
 [node name="camera_follow_template" type="Node2D"]
 

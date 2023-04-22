@@ -17,24 +17,46 @@ var selected = 0
 var option_margin = 27
 var top_margin = 8
 
-func _ready():
-	self.visible = false
-
 func _unhandled_input(event):
-	if self.visible and event.is_action_pressed(\"ui_up\"):
-		selected -= 1
-	if self.visible and event.is_action_pressed(\"ui_down\"):
-		selected += 1
+	if event.is_action_pressed(\"ui_menu\"):
+		self.visible = not self.visible
+		selected = 0
 		
-	menu_select_handler();
+	if self.visible:
+		if event.is_action_pressed(\"ui_up\"):
+			selected -= 1
+		if event.is_action_pressed(\"ui_down\"):
+			selected += 1	
+		if event.is_action_pressed(\"ui_accept\"):
+			menu_select_handler()
+		menu_arrow_handler()
 
-func menu_select_handler():
+func menu_arrow_handler():
 	if selected < 0:
 		selected = menu_options.get_child_count()-1 
 	if selected > menu_options.get_child_count()-1:
 		selected = 0
-
 	select_arrow.position.y = top_margin + (selected) * option_margin
+
+func menu_select_handler():
+	self.visible = false
+	
+	var match_num = selected
+	selected = 0
+	
+	match match_num:
+		0:
+			get_parent().menus[1].visible = true
+		1:
+			get_parent().menus[1].visible = true
+		2:
+			pass
+		3:
+			pass
+		4:
+			SaveGame.new().write_savegame()
+		5:
+			get_tree().quit()
 "
 
 [node name="main_menu" type="Node2D"]

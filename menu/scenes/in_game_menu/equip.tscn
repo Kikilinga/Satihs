@@ -16,26 +16,17 @@ var selected = 0
 var option_margin = 225
 var top_margin = 8
 
-func _ready():
-	self.visible = false
-	
 func _unhandled_input(event):
-	if self.visible and event.is_action_pressed(\"ui_right\"):
-		selected += 1
-	if self.visible and event.is_action_pressed(\"ui_left\"):
-		selected -= 1
-		
-	if self.visible and event.is_action_pressed(\"ui_menu\"):
+	if event.is_action_pressed(\"ui_menu\"):
 		self.visible = false
+	if self.visible:
+		if event.is_action_pressed(\"ui_right\"):
+			selected += 1
+		if event.is_action_pressed(\"ui_left\"):
+			selected -= 1
+		menu_arrow_handler()
 
-	menu_select_handler()
-
-# resets the menu when the player closes the menu.
-func reset_menu():
-	selected = 0
-	menu_select_handler()
-
-func menu_select_handler():
+func menu_arrow_handler():
 	if selected < 0:
 		selected = menu_options.get_child_count()-1 
 	if selected > menu_options.get_child_count()-1:
