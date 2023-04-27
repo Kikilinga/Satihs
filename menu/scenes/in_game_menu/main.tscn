@@ -41,10 +41,7 @@ func menu_arrow_handler():
 func menu_select_handler():
 	self.visible = false
 	
-	var match_num = selected
-	selected = 0
-	
-	match match_num:
+	match selected:
 		0:
 			get_parent().menus[1].visible = true
 		1:
