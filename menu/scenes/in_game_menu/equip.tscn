@@ -1,0 +1,140 @@
+[gd_scene load_steps=4 format=3 uid="uid://2khuqht1pgko"]
+
+[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="1_m8ud6"]
+[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="2_jhmql"]
+
+[sub_resource type="GDScript" id="GDScript_fvtdn"]
+script/source = "extends Node2D
+
+@onready var select_arrow = $Control/NinePatchRect/select_arrow
+var selected = 0
+
+#these could be turned into hard coded numbers for the final version
+@onready var menu_options = $Control/NinePatchRect/VBoxContainer
+
+#these could be turned into hard coded numbers for the final version
+var option_margin = 225
+var top_margin = 8
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"ui_menu\"):
+		self.visible = false
+	if self.visible:
+		if event.is_action_pressed(\"ui_right\"):
+			selected += 1
+		if event.is_action_pressed(\"ui_left\"):
+			selected -= 1
+		menu_arrow_handler()
+
+func menu_arrow_handler():
+	if selected < 0:
+		selected = menu_options.get_child_count()-1 
+	if selected > menu_options.get_child_count()-1:
+		selected = 0
+
+	select_arrow.position.x = top_margin + (selected) * option_margin
+
+#this function should change the items displayed based on the filter selected.
+func menu_select_handler():
+	pass
+"
+
+[node name="equip" type="Node2D"]
+visible = false
+y_sort_enabled = true
+script = SubResource("GDScript_fvtdn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 851.0
+offset_top = 3.0
+offset_right = 891.0
+offset_bottom = 3.0
+
+[node name="Background" type="Sprite2D" parent="Control"]
+position = Vector2(-371, 267)
+texture = ExtResource("1_m8ud6")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 21.275
+anchor_right = 23.775
+offset_left = -1699.0
+offset_top = 56.0
+offset_right = -845.0
+offset_bottom = 97.0
+texture = ExtResource("2_jhmql")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 8.0
+offset_right = 1017.0
+offset_bottom = 54.0
+theme_override_constants/separation = 124
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Items"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Battle"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Armor"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Weapons"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Key"
+fit_content = true
+selection_enabled = true
+
+[node name="select_arrow" type="RichTextLabel" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = ">"
