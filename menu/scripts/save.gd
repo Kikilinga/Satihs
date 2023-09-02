@@ -4,7 +4,7 @@ extends Resource
 const SAVE_PATH:= "user://saves/"
 const FILE_NAME = "player.res"
 
-var player: Resource = preload("res://characters/player.tscn")
+var player: Resource = preload("res://scenes-other/player.tscn")
 
 func write_savegame():
 	verify_filepath()

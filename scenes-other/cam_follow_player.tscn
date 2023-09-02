@@ -1,12 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://cgkahhv2ecxy2"]
+[gd_scene load_steps=26 format=3 uid="uid://dfpgujr76gg5y"]
 
-[ext_resource type="Texture2D" uid="uid://bq8fef71udhjg" path="res://assets/characters/player.png" id="1_251qb"]
+[ext_resource type="Texture2D" uid="uid://bq8fef71udhjg" path="res://assets/characters/player.png" id="1_ntu5j"]
+[ext_resource type="PackedScene" uid="uid://c1k7dv7qdxyuq" path="res://menu/in_game_menu/all_player_menus_camera_follow.tscn" id="2_2cy70"]
 
 [sub_resource type="GDScript" id="GDScript_po5hr"]
 script/source = "extends CharacterBody2D
 
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get(\"parameters/playback\")
+@onready var menus = [get_node(\"all_player_menus_camera_follow/equip\"), get_node(\"all_player_menus_camera_follow/main\")]
+@onready var player = get_node(\"/root/Player\")
 
 var top_speed = 200.0
 
@@ -30,6 +33,18 @@ func change_animation_state():
 		animation_state.travel(\"walk\")
 	else:
 		animation_state.travel(\"idle\")
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"ui_menu\"):
+		player_movement_handler()
+
+func player_movement_handler():
+	var in_menu = false
+	for menu in menus:
+		if menu.visible:
+			in_menu = true
+			break
+	player.set_physics_process(not in_menu)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6inbh"]
@@ -251,7 +266,7 @@ script = SubResource("GDScript_po5hr")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_251qb")
+texture = ExtResource("1_ntu5j")
 hframes = 4
 vframes = 4
 frame = 11
@@ -272,3 +287,10 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/idle/blend_position = Vector2(1.3704, -1.73581)
 parameters/walk/blend_position = Vector2(0.0501119, -0.740175)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="all_player_menus_camera_follow" parent="." instance=ExtResource("2_2cy70")]
+position = Vector2(-480, -270)
+
+[editable path="all_player_menus_camera_follow"]

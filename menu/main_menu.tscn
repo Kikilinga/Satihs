@@ -1,52 +1,108 @@
-[gd_scene load_steps=2 format=3 uid="uid://dan8c4cgjraun"]
+[gd_scene load_steps=3 format=3 uid="uid://dan8c4cgjraun"]
 
-[sub_resource type="GDScript" id="GDScript_3w1uf"]
-script/source = "extends Control
+[ext_resource type="Texture2D" uid="uid://ecq1odqkjmxl" path="res://icon.svg" id="1_mfbxr"]
 
-func _process(_delta):
-	pass
+[sub_resource type="GDScript" id="GDScript_xwdwq"]
+script/source = "extends Node2D
 
-func _on_new_game_button_pressed():
-	get_tree().change_scene_to_file(\"res://levels/camera_follow_template.tscn\")
+@onready var timer = $Shitass/Timer
+@onready var icon = $Shitass
+var flip_time = 0.5
+
+func _ready():
+	timer.start(flip_time)
+
+func _on_timer_timeout():
+	icon.flip_h = !icon.flip_h
+	timer.start(flip_time)
+	
+func _on_return_pressed():
+	$main_menu.visible = true
+	$settings_menu.visible = false
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func _on_settings_pressed():
+	$main_menu.visible = false
+	$settings_menu.visible = true
+
+func _on_new_game_pressed():
+	get_tree().change_scene_to_file(\"res://characters/player.tscn\")
 "
 
-[node name="main_menu" type="Control"]
+[node name="main_menu" type="Node2D"]
+script = SubResource("GDScript_xwdwq")
+
+[node name="Shitass" type="Sprite2D" parent="."]
+position = Vector2(467, 259)
+texture = ExtResource("1_mfbxr")
+
+[node name="Timer" type="Timer" parent="Shitass"]
+wait_time = 3.0
+autostart = true
+
+[node name="main_menu" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = SubResource("GDScript_3w1uf")
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="main_menu_container" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = 4.0
-offset_right = 98.0
-offset_bottom = 70.0
-grow_vertical = 0
-scale = Vector2(1.14315, 1)
+[node name="VBoxContainer" type="VBoxContainer" parent="main_menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="new_game_button" type="Button" parent="main_menu_container"]
+[node name="new_game" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 text = "New Game"
-alignment = 0
 
-[node name="settings_button" type="Button" parent="main_menu_container"]
+[node name="continue" type="Button" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="settings" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 text = "Settings"
-alignment = 0
 
-[node name="quit" type="Button" parent="main_menu_container"]
+[node name="quit" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="main_menu_container/new_game_button" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="main_menu_container/settings_button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="main_menu_container/quit" to="." method="_on_quit_pressed"]
+[node name="settings_menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="settings_menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="audio" type="Button" parent="settings_menu/VBoxContainer"]
+layout_mode = 2
+text = "Audio"
+
+[node name="controls" type="Button" parent="settings_menu/VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="rendering" type="Button" parent="settings_menu/VBoxContainer"]
+layout_mode = 2
+text = "Rendering"
+
+[node name="custom_character" type="Button" parent="settings_menu/VBoxContainer"]
+layout_mode = 2
+text = "Custom Character"
+
+[node name="return" type="Button" parent="settings_menu/VBoxContainer"]
+layout_mode = 2
+text = "Return"
+
+[connection signal="timeout" from="Shitass/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="main_menu/VBoxContainer/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="settings_menu/VBoxContainer/return" to="." method="_on_return_pressed"]

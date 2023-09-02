@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbt4yysj5b4e2"]
 
-[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="1_orhv1"]
-[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="2_rtf2n"]
-[ext_resource type="PackedScene" uid="uid://2khuqht1pgko" path="res://menu/scenes/in_game_menu/equip.tscn" id="3_xi122"]
+[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="1_2qcn1"]
+[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="2_yyko6"]
+[ext_resource type="PackedScene" uid="uid://2khuqht1pgko" path="res://menu/in_game_menu/dependencies/equip.tscn" id="3_aj4np"]
 
 [sub_resource type="GDScript" id="GDScript_fvtdn"]
 script/source = "extends Node2D
@@ -70,7 +70,7 @@ offset_bottom = 3.0
 
 [node name="BackgroundLighten" type="Sprite2D" parent="Control"]
 position = Vector2(-371, 267)
-texture = ExtResource("1_orhv1")
+texture = ExtResource("1_2qcn1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 layout_mode = 1
@@ -80,7 +80,7 @@ anchor_right = 23.775
 offset_left = -851.0
 offset_right = -845.0
 offset_bottom = 176.0
-texture = ExtResource("2_rtf2n")
+texture = ExtResource("2_yyko6")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_left = 8
 patch_margin_top = 8
@@ -163,4 +163,4 @@ offset_bottom = 48.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = ">"
 
-[node name="equip" parent="." instance=ExtResource("3_xi122")]
+[node name="equip" parent="." instance=ExtResource("3_aj4np")]
