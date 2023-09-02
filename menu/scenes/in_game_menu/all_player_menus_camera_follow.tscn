@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1k7dv7qdxyuq"]
+
+[ext_resource type="PackedScene" uid="uid://cbt4yysj5b4e2" path="res://menu/scenes/in_game_menu/main.tscn" id="1_jc4h6"]
+[ext_resource type="PackedScene" uid="uid://2khuqht1pgko" path="res://menu/scenes/in_game_menu/equip.tscn" id="2_oxclf"]
+
+[sub_resource type="GDScript" id="GDScript_1mq6s"]
+script/source = "extends Node2D
+
+@onready var menus = [get_node(\"main\"), get_node(\"equip\")]
+@onready var player = get_parent()
+
+func _ready():
+	for menu in menus:
+		menu.visible = false
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"ui_menu\"):
+		player_movement_handler()
+
+func player_movement_handler():
+	var in_menu = false
+	for menu in menus:
+		if menu.visible:
+			in_menu = true
+			break
+	player.set_physics_process(not in_menu)
+"
+
+[node name="all_player_menus_camera_follow" type="Node2D"]
+script = SubResource("GDScript_1mq6s")
+
+[node name="main" parent="." instance=ExtResource("1_jc4h6")]
+
+[node name="equip" parent="." instance=ExtResource("2_oxclf")]
+visible = true

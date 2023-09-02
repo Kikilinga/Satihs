@@ -1,0 +1,166 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbt4yysj5b4e2"]
+
+[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="1_orhv1"]
+[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="2_rtf2n"]
+[ext_resource type="PackedScene" uid="uid://2khuqht1pgko" path="res://menu/scenes/in_game_menu/equip.tscn" id="3_xi122"]
+
+[sub_resource type="GDScript" id="GDScript_fvtdn"]
+script/source = "extends Node2D
+
+@onready var select_arrow = $Control/NinePatchRect/select_arrow
+var selected = 0
+
+#these could be turned into hard coded numbers for the final version
+@onready var menu_options = $Control/NinePatchRect/VBoxContainer
+
+#these could be turned into hard coded numbers for the final version
+var option_margin = 27
+var top_margin = 8
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"ui_menu\"):
+		self.visible = not self.visible
+		selected = 0
+		
+	if self.visible:
+		if event.is_action_pressed(\"ui_up\"):
+			selected -= 1
+		if event.is_action_pressed(\"ui_down\"):
+			selected += 1	
+		if event.is_action_pressed(\"ui_accept\"):
+			menu_select_handler()
+		menu_arrow_handler()
+
+func menu_arrow_handler():
+	if selected < 0:
+		selected = menu_options.get_child_count()-1 
+	if selected > menu_options.get_child_count()-1:
+		selected = 0
+	select_arrow.position.y = top_margin + (selected) * option_margin
+
+func menu_select_handler():
+	self.visible = false
+	
+	match selected:
+		0:
+			get_parent().menus[1].visible = true
+		1:
+			get_parent().menus[1].visible = true
+		2:
+			pass
+		3:
+			pass
+		4:
+			SaveGame.new().write_savegame()
+		5:
+			get_tree().quit()
+"
+
+[node name="main_menu" type="Node2D"]
+y_sort_enabled = true
+script = SubResource("GDScript_fvtdn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 851.0
+offset_top = 3.0
+offset_right = 891.0
+offset_bottom = 3.0
+
+[node name="BackgroundLighten" type="Sprite2D" parent="Control"]
+position = Vector2(-371, 267)
+texture = ExtResource("1_orhv1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 21.275
+anchor_right = 23.775
+offset_left = -851.0
+offset_right = -845.0
+offset_bottom = 176.0
+texture = ExtResource("2_rtf2n")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 98.0
+offset_bottom = 148.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(70, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Items"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(70, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Loadout"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(70, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Quests"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(70, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Options"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(70, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Save"
+fit_content = true
+selection_enabled = true
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(70, 10)
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Quit"
+fit_content = true
+selection_enabled = true
+
+[node name="select_arrow" type="RichTextLabel" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 54.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = ">"
+
+[node name="equip" parent="." instance=ExtResource("3_xi122")]
