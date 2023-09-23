@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cvm1oadyexew2"]
+[gd_scene load_steps=25 format=3 uid="uid://cvm1oadyexew2"]
 
 [ext_resource type="Texture2D" uid="uid://bq8fef71udhjg" path="res://assets/player.png" id="1_251qb"]
 
@@ -245,8 +245,6 @@ states/idle/position = Vector2(317, 78)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_xusti")
 states/walk/position = Vector2(317, 147)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_65nkd"]
-
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -32)
 script = SubResource("GDScript_po5hr")
@@ -272,6 +270,5 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_poo82")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_65nkd")
 parameters/idle/blend_position = Vector2(1.3704, -1.73581)
 parameters/walk/blend_position = Vector2(0.0501119, -0.740175)
