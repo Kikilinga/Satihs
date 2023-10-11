@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b53yvg745nntp"
-path="res://.godot/imported/Stand with drop shadow.png-bba4a3387a1f4dfe0cbd322214778d34.ctex"
+uid="uid://d0600p1acvcu"
+path="res://.godot/imported/Bar Stand cropped.png-aabe0ee2b79c878e5f1f69e51dc8761d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/Stand with drop shadow.png"
-dest_files=["res://.godot/imported/Stand with drop shadow.png-bba4a3387a1f4dfe0cbd322214778d34.ctex"]
+source_file="res://Unused/Bar Stand cropped.png"
+dest_files=["res://.godot/imported/Bar Stand cropped.png-aabe0ee2b79c878e5f1f69e51dc8761d.ctex"]
 
 [params]
 

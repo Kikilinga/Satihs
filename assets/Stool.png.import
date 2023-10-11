@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxt5wptxioua3"
-path="res://.godot/imported/Bar Stand cropped.png-50201ddb391d44033a3aa722629ce6d3.ctex"
+uid="uid://cyj06t2p6m8lh"
+path="res://.godot/imported/Stool.png-b784231b00c533201639e42f3d9be96d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bar Stand cropped.png"
-dest_files=["res://.godot/imported/Bar Stand cropped.png-50201ddb391d44033a3aa722629ce6d3.ctex"]
+source_file="res://assets/Stool.png"
+dest_files=["res://.godot/imported/Stool.png-b784231b00c533201639e42f3d9be96d.ctex"]
 
 [params]
 

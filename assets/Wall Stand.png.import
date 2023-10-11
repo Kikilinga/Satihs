@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyj06t2p6m8lh"
-path="res://.godot/imported/Stool.png-a84ece5b7cfdbf54a796dad17c5bbf24.ctex"
+uid="uid://tjvqmxp234xd"
+path="res://.godot/imported/Wall Stand.png-c554e78cfedb046db0fec67218c4efdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/Stool.png"
-dest_files=["res://.godot/imported/Stool.png-a84ece5b7cfdbf54a796dad17c5bbf24.ctex"]
+source_file="res://assets/Wall Stand.png"
+dest_files=["res://.godot/imported/Wall Stand.png-c554e78cfedb046db0fec67218c4efdb.ctex"]
 
 [params]
 

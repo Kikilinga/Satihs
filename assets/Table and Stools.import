@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db5obpvppro31"
-path="res://.godot/imported/imageedit_1_8969483441.png-ba750cc9b983d6c4f07d77ed41c1c3a3.ctex"
+path="res://.godot/imported/imageedit_1_8969483441.png-b46f55f8bd54aedc10d1120b06a4482d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/imageedit_1_8969483441.png"
-dest_files=["res://.godot/imported/imageedit_1_8969483441.png-ba750cc9b983d6c4f07d77ed41c1c3a3.ctex"]
+source_file="res://assets/imageedit_1_8969483441.png"
+dest_files=["res://.godot/imported/imageedit_1_8969483441.png-b46f55f8bd54aedc10d1120b06a4482d.ctex"]
 
 [params]
 
