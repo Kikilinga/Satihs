@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://432ijti5akpv"
-path="res://.godot/imported/Plank.png-9f7c78846115bfa2b771c3c2de29fa0f.ctex"
+uid="uid://b53yvg745nntp"
+path="res://.godot/imported/Stand with drop shadow.png-323c823df0efcab109790aecf6325f0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/Plank.png"
-dest_files=["res://.godot/imported/Plank.png-9f7c78846115bfa2b771c3c2de29fa0f.ctex"]
+source_file="res://Unused/Stand with drop shadow.png"
+dest_files=["res://.godot/imported/Stand with drop shadow.png-323c823df0efcab109790aecf6325f0a.ctex"]
 
 [params]
 

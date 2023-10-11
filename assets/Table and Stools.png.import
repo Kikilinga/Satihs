@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tjvqmxp234xd"
-path="res://.godot/imported/Bar Stand with Drop Shadow.png-c08e0c8933bceb980c425d593276010b.ctex"
+uid="uid://bb53oph6ynyj4"
+path="res://.godot/imported/Table and Stools.png-c2017a6dd584fa8e6250be25f9265326.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bar Stand with Drop Shadow.png"
-dest_files=["res://.godot/imported/Bar Stand with Drop Shadow.png-c08e0c8933bceb980c425d593276010b.ctex"]
+source_file="res://assets/Table and Stools.png"
+dest_files=["res://.godot/imported/Table and Stools.png-c2017a6dd584fa8e6250be25f9265326.ctex"]
 
 [params]
 

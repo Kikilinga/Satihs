@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ny8sxelblb2"
-path="res://.godot/imported/preview-1.png-f39c58d82f5a54a57777d2de064e1d82.ctex"
+uid="uid://bu8re8yweggi7"
+path="res://.godot/imported/Plank.png-b8b7e3957c60f4b94c5160e1f040b7e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/preview-1.png"
-dest_files=["res://.godot/imported/preview-1.png-f39c58d82f5a54a57777d2de064e1d82.ctex"]
+source_file="res://Unused/Plank.png"
+dest_files=["res://.godot/imported/Plank.png-b8b7e3957c60f4b94c5160e1f040b7e9.ctex"]
 
 [params]
 
