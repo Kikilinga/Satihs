@@ -28,7 +28,7 @@ func _on_settings_pressed():
 	$settings_menu.visible = true
 
 func _on_new_game_pressed():
-	get_tree().change_scene_to_file(\"res://characters/player.tscn\")
+	get_tree().change_scene_to_file(\"res://levels/bar.tscn\")
 "
 
 [node name="main_menu" type="Node2D"]
