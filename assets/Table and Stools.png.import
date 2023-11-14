@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btivms43nd3km"
-path="res://.godot/imported/grasstileset128x128.png-850438b1f96bb1081a40964478a540f3.ctex"
+uid="uid://bb53oph6ynyj4"
+path="res://.godot/imported/Table and Stools.png-c2017a6dd584fa8e6250be25f9265326.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grasstileset128x128.png"
-dest_files=["res://.godot/imported/grasstileset128x128.png-850438b1f96bb1081a40964478a540f3.ctex"]
+source_file="res://assets/Table and Stools.png"
+dest_files=["res://.godot/imported/Table and Stools.png-c2017a6dd584fa8e6250be25f9265326.ctex"]
 
 [params]
 

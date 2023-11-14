@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx405mfd1a3hr"
-path="res://.godot/imported/BarStandsSpriteSheet.png-722e28aea3d40bcd9781ef3525c50a6d.ctex"
+uid="uid://dp5by02jofow4"
+path="res://.godot/imported/Stand without drop shadow.png-b73bbeb28e435dac9a6272fba7be7ece.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Unused/BarStandsSpriteSheet.png"
-dest_files=["res://.godot/imported/BarStandsSpriteSheet.png-722e28aea3d40bcd9781ef3525c50a6d.ctex"]
+source_file="res://Unused/Stand without drop shadow.png"
+dest_files=["res://.godot/imported/Stand without drop shadow.png-b73bbeb28e435dac9a6272fba7be7ece.ctex"]
 
 [params]
 
