@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nc2v8xd23n2"
-path="res://.godot/imported/bar_floor.png-a38603837e6ef16bbc90fcbf227c8819.ctex"
+uid="uid://ciwhwcgxxuujb"
+path="res://.godot/imported/Lightwood Bar.png-53fa22bd59b242c82615e53a4e95777f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scenes/bar/floors/bar_floor.png"
-dest_files=["res://.godot/imported/bar_floor.png-a38603837e6ef16bbc90fcbf227c8819.ctex"]
+source_file="res://assets/Lightwood Bar.png"
+dest_files=["res://.godot/imported/Lightwood Bar.png-53fa22bd59b242c82615e53a4e95777f.ctex"]
 
 [params]
 
