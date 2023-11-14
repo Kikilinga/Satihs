@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu8re8yweggi7"
-path="res://.godot/imported/Plank.png-b8b7e3957c60f4b94c5160e1f040b7e9.ctex"
+uid="uid://cyj06t2p6m8lh"
+path="res://.godot/imported/Stool.png-e0425262807cc8308b2c5d93adfa46ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Unused/Plank.png"
-dest_files=["res://.godot/imported/Plank.png-b8b7e3957c60f4b94c5160e1f040b7e9.ctex"]
+source_file="res://assets/furniture/bar/Stool.png"
+dest_files=["res://.godot/imported/Stool.png-e0425262807cc8308b2c5d93adfa46ae.ctex"]
 
 [params]
 
