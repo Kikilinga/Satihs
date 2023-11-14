@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nm8uonfu7is6"
-path="res://.godot/imported/Brown Plank for Bar Stand.png-5c36e590d627f81fa970f907b60b7c80.ctex"
+uid="uid://duuacihht6baa"
+path="res://.godot/imported/bar_walls.png-a2920510ad59a5007afdfa001f94ce44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Brown Plank for Bar Stand.png"
-dest_files=["res://.godot/imported/Brown Plank for Bar Stand.png-5c36e590d627f81fa970f907b60b7c80.ctex"]
+source_file="res://assets/scenes/bar/walls/bar_walls.png"
+dest_files=["res://.godot/imported/bar_walls.png-a2920510ad59a5007afdfa001f94ce44.ctex"]
 
 [params]
 

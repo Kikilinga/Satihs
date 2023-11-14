@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=21 format=3 uid="uid://t53rlo1pnr0x"]
 
 [ext_resource type="PackedScene" uid="uid://cvm1oadyexew2" path="res://characters/player.tscn" id="1_o8j2u"]
@@ -8,16 +9,26 @@
 [ext_resource type="Texture2D" uid="uid://cyj06t2p6m8lh" path="res://assets/Stool.png" id="5_mhtu7"]
 [ext_resource type="Texture2D" uid="uid://ciwhwcgxxuujb" path="res://assets/Lightwood Bar.png" id="7_esd6p"]
 [ext_resource type="Texture2D" uid="uid://tjvqmxp234xd" path="res://assets/Wall Stand.png" id="7_y6kfg"]
+=======
+[gd_scene load_steps=17 format=3 uid="uid://t53rlo1pnr0x"]
+
+[ext_resource type="Texture2D" uid="uid://nc2v8xd23n2" path="res://assets/scenes/bar/floors/bar_floor.png" id="1_e3dft"]
+[ext_resource type="PackedScene" uid="uid://cvm1oadyexew2" path="res://scenes-other/player.tscn" id="1_o8j2u"]
+[ext_resource type="Texture2D" uid="uid://duuacihht6baa" path="res://assets/scenes/bar/walls/bar_walls.png" id="2_87uqe"]
+[ext_resource type="Texture2D" uid="uid://bb53oph6ynyj4" path="res://assets/furniture/bar/Table and Stools.png" id="3_c2ca4"]
+[ext_resource type="Texture2D" uid="uid://cyj06t2p6m8lh" path="res://assets/furniture/bar/Stool.png" id="4_b3xiw"]
+[ext_resource type="Texture2D" uid="uid://ukm0roo6a0kh" path="res://assets/furniture/bar/TableExample1.png" id="5_664ly"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxv1p"]
-texture = ExtResource("1_ph5o0")
+texture = ExtResource("1_e3dft")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffauw"]
-texture = ExtResource("2_0f0v7")
+texture = ExtResource("2_87uqe")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -31,7 +42,7 @@ sources/0 = SubResource("TileSetAtlasSource_pxv1p")
 sources/1 = SubResource("TileSetAtlasSource_ffauw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yc2m3"]
-texture = ExtResource("4_rysbr")
+texture = ExtResource("3_c2ca4")
 texture_region_size = Vector2i(126, 96)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -43,22 +54,29 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_yc2m3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ka6o"]
-texture = ExtResource("5_mhtu7")
-texture_region_size = Vector2i(32, 32)
+texture = ExtResource("4_b3xiw")
+texture_region_size = Vector2i(33, 33)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_etisc"]
 sources/0 = SubResource("TileSetAtlasSource_2ka6o")
 
+<<<<<<< Updated upstream
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88bwi"]
 texture = ExtResource("5_5khgp")
 texture_region_size = Vector2i(26, 185)
+=======
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjsun"]
+texture = ExtResource("5_664ly")
+texture_region_size = Vector2i(32, 32)
+>>>>>>> Stashed changes
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 94, 14, 93, 14, -93, -16, -93)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_1/angular_velocity = 0.0
+<<<<<<< Updated upstream
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qiem"]
 texture = ExtResource("7_esd6p")
@@ -69,10 +87,128 @@ texture_region_size = Vector2i(121, 26)
 0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_1/angular_velocity = 0.0
 0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-60, -12, 60.1041, -12.0208, 59.7505, 1.76777, -60.1041, 1.41421)
+=======
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_1/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_1/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_1/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_1/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_1/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_1/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_1/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_1/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_1/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_1/angular_velocity = 0.0
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_1/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_1/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_1/angular_velocity = 0.0
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:3/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_1/angular_velocity = 0.0
+0:4/0 = 0
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_1/angular_velocity = 0.0
+1:4/0 = 0
+1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_0/angular_velocity = 0.0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_1/angular_velocity = 0.0
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_1/angular_velocity = 0.0
+3:4/0 = 0
+3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:4/0/physics_layer_0/angular_velocity = 0.0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+3:4/0/physics_layer_1/angular_velocity = 0.0
+4:4/0 = 0
+4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:4/0/physics_layer_0/angular_velocity = 0.0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:4/0/physics_layer_1/angular_velocity = 0.0
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSet" id="TileSet_2aihd"]
+tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
+<<<<<<< Updated upstream
 sources/0 = SubResource("TileSetAtlasSource_88bwi")
 sources/2 = SubResource("TileSetAtlasSource_0qiem")
 
@@ -87,6 +223,12 @@ texture_region_size = Vector2i(30, 195)
 [sub_resource type="TileSet" id="TileSet_nuveb"]
 physics_layer_0/collision_layer = 1
 sources/6 = SubResource("TileSetAtlasSource_0x44c")
+=======
+sources/4 = SubResource("TileSetAtlasSource_jjsun")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsak3"]
+size = Vector2(136, 20)
+>>>>>>> Stashed changes
 
 [node name="Node2D" type="Node2D"]
 
@@ -101,7 +243,11 @@ position = Vector2(-22, 0)
 tile_set = SubResource("TileSet_e0lb5")
 cell_quadrant_size = 50
 format = 2
+<<<<<<< Updated upstream
 layer_0/tile_data = PackedInt32Array(1900554, 1, 0, 1441817, 1, 0)
+=======
+layer_0/tile_data = PackedInt32Array(1966106, 1, 0, 524300, 1, 0, 1638412, 1, 0, 1179670, 1, 0)
+>>>>>>> Stashed changes
 
 [node name="BarStools" type="TileMap" parent="."]
 position = Vector2(-2, -2)
@@ -110,11 +256,16 @@ cell_quadrant_size = 50
 format = 2
 layer_0/tile_data = PackedInt32Array(131091, 0, 0, 393235, 0, 0, 1638403, 0, 0, 1048579, 0, 0, 786435, 0, 0, 1376259, 0, 0, 655379, 0, 0)
 
+<<<<<<< Updated upstream
 [node name="BarStand" type="TileMap" parent="."]
 position = Vector2(-5, -12)
+=======
+[node name="BarStands" type="TileMap" parent="."]
+>>>>>>> Stashed changes
 tile_set = SubResource("TileSet_2aihd")
-cell_quadrant_size = 50
+cell_quadrant_size = 24
 format = 2
+<<<<<<< Updated upstream
 layer_0/tile_data = PackedInt32Array(393237, 0, 0, 786456, 2, 0)
 
 [node name="WallStand" type="TileMap" parent="."]
@@ -127,13 +278,30 @@ layer_0/tile_data = PackedInt32Array(786434, 6, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(199, 50)
+=======
+layer_0/tile_data = PackedInt32Array(65547, 4, 1, 131083, 4, 1, 196619, 4, 1, 262155, 4, 1, 327691, 4, 1, 393227, 4, 4, 393228, 196612, 0, 393229, 65540, 2, 0, 131076, 3, 65536, 4, 3, 131072, 4, 3, 196608, 4, 3, 262144, 4, 3, 327680, 4, 3, 393216, 4, 3, 458752, 4, 3, 524288, 4, 3, 589824, 4, 3, 655360, 4, 3, 720896, 4, 3, 786432, 4, 3, 851968, 4, 3, 917504, 4, 3, 983040, 4, 3, 1048576, 131076, 1, 11, 131076, 3)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(416, 129)
+>>>>>>> Stashed changes
 rotation = 3.14159
 scale = Vector2(0.483237, 2.9476)
 
 [node name="Player" parent="." instance=ExtResource("1_o8j2u")]
+<<<<<<< Updated upstream
 position = Vector2(198, 36)
+=======
+position = Vector2(415, 116)
+>>>>>>> Stashed changes
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 position = Vector2(1, 14)
 scale = Vector2(-0.483237, -2.9476)
 remote_path = NodePath("../../Camera2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(256, 589)
+shape = SubResource("RectangleShape2D_gsak3")
