@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Satihs"
-run/main_scene="res://levels/camera_follow_template.tscn"
+run/main_scene="res://menu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/show_image=false
@@ -71,4 +71,4 @@ ui_page_down={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.643137, 0.760784, 0.388235, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
