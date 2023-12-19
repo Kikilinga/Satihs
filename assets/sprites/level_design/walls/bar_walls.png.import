@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckk2mvwtpyrob"
-path="res://.godot/imported/background_lighten.png-791a27112a67eeefb536b657d8592597.ctex"
+uid="uid://duuacihht6baa"
+path="res://.godot/imported/bar_walls.png-50a2467e2de43683842ae5142753f330.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/background_lighten.png"
-dest_files=["res://.godot/imported/background_lighten.png-791a27112a67eeefb536b657d8592597.ctex"]
+source_file="res://assets/sprites/level_design/walls/bar_walls.png"
+dest_files=["res://.godot/imported/bar_walls.png-50a2467e2de43683842ae5142753f330.ctex"]
 
 [params]
 

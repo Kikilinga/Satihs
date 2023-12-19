@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nm8uonfu7is6"
-path="res://.godot/imported/Brown Plank for Bar Stand.png-5c36e590d627f81fa970f907b60b7c80.ctex"
+uid="uid://cyj06t2p6m8lh"
+path="res://.godot/imported/Stool.png-dce8fc97d7a879a5ce6c974770051ee6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Brown Plank for Bar Stand.png"
-dest_files=["res://.godot/imported/Brown Plank for Bar Stand.png-5c36e590d627f81fa970f907b60b7c80.ctex"]
+source_file="res://assets/sprites/level_design/furniture/chairs/Stool.png"
+dest_files=["res://.godot/imported/Stool.png-dce8fc97d7a879a5ce6c974770051ee6.ctex"]
 
 [params]
 

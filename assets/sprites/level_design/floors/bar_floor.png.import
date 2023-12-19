@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyj06t2p6m8lh"
-path="res://.godot/imported/Stool.png-b784231b00c533201639e42f3d9be96d.ctex"
+uid="uid://nc2v8xd23n2"
+path="res://.godot/imported/bar_floor.png-fac43fde4e7c45715ef3c36c3b66c89e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Stool.png"
-dest_files=["res://.godot/imported/Stool.png-b784231b00c533201639e42f3d9be96d.ctex"]
+source_file="res://assets/sprites/level_design/floors/bar_floor.png"
+dest_files=["res://.godot/imported/bar_floor.png-fac43fde4e7c45715ef3c36c3b66c89e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cthb3t1ebcqbx"
-path="res://.godot/imported/in-game_menu.png-4f0ff13c7458d8a4f6ccb49f587767a1.ctex"
+uid="uid://ciwhwcgxxuujb"
+path="res://.godot/imported/Lightwood Bar.png-3f783a694d661a723fa61b0fd0e330cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/in-game_menu.png"
-dest_files=["res://.godot/imported/in-game_menu.png-4f0ff13c7458d8a4f6ccb49f587767a1.ctex"]
+source_file="res://assets/sprites/level_design/furniture/tables/Lightwood Bar.png"
+dest_files=["res://.godot/imported/Lightwood Bar.png-3f783a694d661a723fa61b0fd0e330cc.ctex"]
 
 [params]
 

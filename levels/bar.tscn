@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://t53rlo1pnr0x"]
 
-[ext_resource type="PackedScene" uid="uid://cvm1oadyexew2" path="res://scenes-other/player.tscn" id="1_o8j2u"]
+[ext_resource type="PackedScene" uid="uid://cvm1oadyexew2" path="res://base_scenes/player.tscn" id="1_o8j2u"]
 [ext_resource type="Texture2D" uid="uid://nc2v8xd23n2" path="res://assets/bar_floor.png" id="1_ph5o0"]
 [ext_resource type="Texture2D" uid="uid://duuacihht6baa" path="res://assets/bar_walls.png" id="2_0f0v7"]
-[ext_resource type="Texture2D" uid="uid://bb53oph6ynyj4" path="res://assets/Table and Stools.png" id="4_rysbr"]
+[ext_resource type="Texture2D" uid="uid://bb53oph6ynyj4" path="res://assets/furniture/Table and Stools.png" id="4_rysbr"]
 [ext_resource type="Texture2D" uid="uid://nm8uonfu7is6" path="res://assets/Brown Plank for Bar Stand.png" id="5_5khgp"]
-[ext_resource type="Texture2D" uid="uid://cyj06t2p6m8lh" path="res://assets/Stool.png" id="5_mhtu7"]
+[ext_resource type="Texture2D" uid="uid://cyj06t2p6m8lh" path="res://assets/furniture/Stool.png" id="5_mhtu7"]
 [ext_resource type="Texture2D" uid="uid://ciwhwcgxxuujb" path="res://assets/Lightwood Bar.png" id="7_esd6p"]
 [ext_resource type="Texture2D" uid="uid://tjvqmxp234xd" path="res://assets/Wall Stand.png" id="7_y6kfg"]
 

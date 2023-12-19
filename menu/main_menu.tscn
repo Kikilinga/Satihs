@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dan8c4cgjraun"]
+[gd_scene load_steps=5 format=3 uid="uid://dan8c4cgjraun"]
 
 [ext_resource type="Texture2D" uid="uid://ecq1odqkjmxl" path="res://icon.svg" id="1_mfbxr"]
 
@@ -7,6 +7,7 @@ script/source = "extends Node2D
 
 @onready var timer = $Shitass/Timer
 @onready var icon = $Shitass
+@onready var display_size = get_viewport().size
 var flip_time = 0.5
 
 func _ready():
@@ -15,20 +16,60 @@ func _ready():
 func _on_timer_timeout():
 	icon.flip_h = !icon.flip_h
 	timer.start(flip_time)
+
+func _on_new_game_pressed():
+	get_tree().change_scene_to_file(\"res://levels/bar.tscn\")
+
+func _on_continue_pressed():
+	DialogeManager.start_dialogue(Vector2(display_size.x/2,display_size.y), [\"Oops, feature not yet implemented\"])
 	
-func _on_return_pressed():
-	$main_menu.visible = true
-	$settings_menu.visible = false
-
-func _on_quit_pressed():
-	get_tree().quit()
-
 func _on_settings_pressed():
 	$main_menu.visible = false
 	$settings_menu.visible = true
 
-func _on_new_game_pressed():
-	get_tree().change_scene_to_file(\"res://levels/bar.tscn\")
+func _on_quit_pressed():
+	get_tree().quit()
+"
+
+[sub_resource type="GDScript" id="GDScript_j8mxj"]
+script/source = "extends Control
+
+@onready var display_size = get_viewport().size
+
+
+func _on_audio_pressed():
+	DialogeManager.start_dialogue(Vector2(display_size.x/2,display_size.y), 
+	[\"Oops, feature not yet implemented\"])
+
+func _on_controls_pressed():
+	DialogeManager.start_dialogue(Vector2(display_size.x/2,display_size.y), 
+	[\"Oops, feature not yet implemented\"])
+
+func _on_rendering_pressed():
+	DialogeManager.start_dialogue(Vector2(display_size.x/2,display_size.y), 
+	[\"Oops, feature not yet implemented\"])
+
+func _on_custom_character_pressed():
+	DialogeManager.start_dialogue(Vector2(display_size.x/2,display_size.y), 
+	[\"Oops, feature not yet implemented\"])
+
+func _on_return_pressed():
+	$main_menu.visible = true
+	$settings_menu.visible = false
+"
+
+[sub_resource type="GDScript" id="GDScript_ai088"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
 "
 
 [node name="main_menu" type="Node2D"]
@@ -75,6 +116,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = SubResource("GDScript_j8mxj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="settings_menu"]
 layout_mode = 0
@@ -84,6 +126,7 @@ offset_bottom = 40.0
 [node name="audio" type="Button" parent="settings_menu/VBoxContainer"]
 layout_mode = 2
 text = "Audio"
+script = SubResource("GDScript_ai088")
 
 [node name="controls" type="Button" parent="settings_menu/VBoxContainer"]
 layout_mode = 2
@@ -103,6 +146,11 @@ text = "Return"
 
 [connection signal="timeout" from="Shitass/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="main_menu/VBoxContainer/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="main_menu/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="main_menu/VBoxContainer/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="settings_menu/VBoxContainer/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="settings_menu/VBoxContainer/audio" to="settings_menu" method="_on_audio_pressed"]
+[connection signal="pressed" from="settings_menu/VBoxContainer/controls" to="settings_menu" method="_on_controls_pressed"]
+[connection signal="pressed" from="settings_menu/VBoxContainer/rendering" to="settings_menu" method="_on_rendering_pressed"]
+[connection signal="pressed" from="settings_menu/VBoxContainer/custom_character" to="settings_menu" method="_on_custom_character_pressed"]
+[connection signal="pressed" from="settings_menu/VBoxContainer/return" to="settings_menu" method="_on_return_pressed"]

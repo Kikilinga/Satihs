@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://cedd5prp87jtl"]
+
+[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/sprites/menu/in-game_menu.png" id="1_mbga8"]
+
+[sub_resource type="GDScript" id="GDScript_dytiy"]
+script/source = "extends MarginContainer
+
+@onready var label = $MarginContainer/Label
+@onready var timer = $TextBoxDisplayTime
+
+const MAX_WIDTH = 1080
+var text = \"\"
+var letter_index = 0
+var time_between_letters = 0.025
+var space_time = 0.06
+var punctuation_time = 0.2
+
+signal finished_displaying()
+
+func display_text(text_to_display: String):
+	text = text_to_display
+	label.text = text_to_display
+	
+	await resized
+	custom_minimum_size.x = min(size.x,MAX_WIDTH)
+	
+	if (size.x > MAX_WIDTH):
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		await resized
+		await resized
+		custom_minimum_size.y = size.y
+	
+	global_position.x -= size.x/2
+	global_position.y -= size.y + 24
+	label.text = \"\"
+	_display_letter()
+	
+func _display_letter():
+	label.text += text[letter_index]
+	letter_index += 1
+	if letter_index >= text.length():
+		finished_displaying.emit()
+		return
+	timer.start(time_between_letters)
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_text_box_display_time_timeout():
+	_display_letter()
+"
+
+[node name="text_box" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 0.026
+anchor_bottom = 0.061
+offset_left = 489.0
+offset_top = 460.0
+offset_right = 489.04
+offset_bottom = 460.06
+script = SubResource("GDScript_dytiy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_mbga8")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+vertical_alignment = 1
+
+[node name="TextBoxDisplayTime" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TextBoxDisplayTime" to="." method="_on_text_box_display_time_timeout"]

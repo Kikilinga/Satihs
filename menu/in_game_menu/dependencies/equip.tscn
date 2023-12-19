@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://2khuqht1pgko"]
 
-[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/menu/background_lighten.png" id="1_m8ud6"]
-[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/menu/in-game_menu.png" id="2_jhmql"]
+[ext_resource type="Texture2D" uid="uid://ckk2mvwtpyrob" path="res://assets/sprites/menu/background_lighten.png" id="1_m8ud6"]
+[ext_resource type="Texture2D" uid="uid://cthb3t1ebcqbx" path="res://assets/sprites/menu/in-game_menu.png" id="2_jhmql"]
 
 [sub_resource type="GDScript" id="GDScript_fvtdn"]
 script/source = "extends Node2D

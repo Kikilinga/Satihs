@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciwhwcgxxuujb"
-path="res://.godot/imported/Lightwood Bar.png-53fa22bd59b242c82615e53a4e95777f.ctex"
+uid="uid://ckk2mvwtpyrob"
+path="res://.godot/imported/background_lighten.png-6b72e8c970987e1417277ec3926e0487.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Lightwood Bar.png"
-dest_files=["res://.godot/imported/Lightwood Bar.png-53fa22bd59b242c82615e53a4e95777f.ctex"]
+source_file="res://assets/sprites/menu/background_lighten.png"
+dest_files=["res://.godot/imported/background_lighten.png-6b72e8c970987e1417277ec3926e0487.ctex"]
 
 [params]
 
